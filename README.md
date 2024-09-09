@@ -13,7 +13,6 @@ Add this to your `.pre-commit-config.yaml`
     rev: v1.0.0  # Use the ref you want to point at
     hooks:
     -   id: detect-fuzzy-translations
-        rev: v1.0.0
         files: /LC_MESSAGES/.+\.po$
     # -   id: ...
 ```
