@@ -1,19 +1,15 @@
-[project]
-requires-python = ">=3.5"
-
-[tool.ruff]
 # https://docs.astral.sh/ruff/settings/
 builtins = ["_"]
 line-length = 120
 preview = true
 unsafe-fixes = true
 
-[tool.ruff.format]
+[format]
 # https://docs.astral.sh/ruff/settings/#format
 docstring-code-format = true
 quote-style = "single"
 
-[tool.ruff.lint]
+[lint]
 # https://docs.astral.sh/ruff/settings/
 dummy-variable-rgx = "^(_{2,}|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 ignore-init-module-imports = true
@@ -97,35 +93,35 @@ ignore = [
 ]
 fixable = ["I", "UP"]
 
-[tool.ruff.lint.flake8-import-conventions]
+[lint.flake8-import-conventions]
 banned-from = ["datetime"]
 
-[tool.ruff.lint.flake8-quotes]
+[lint.flake8-quotes]
 # https://docs.astral.sh/ruff/settings/#flake8-quotes
 inline-quotes = "single"
 
-[tool.ruff.lint.flake8-self]
+[lint.flake8-self]
 # https://docs.astral.sh/ruff/settings/#ignore-names
 ignore-names = ["_asdict", "_fields", "_field_defaults", "_make", "_meta", "_replace"]
 
-[tool.ruff.lint.isort]
+[lint.isort]
 # https://docs.astral.sh/ruff/settings/#isort
 force-sort-within-sections = true
 known-first-party = ["pre_commit_hooks"]
 order-by-type = false
 
-[tool.ruff.lint.mccabe]
+[lint.mccabe]
 # https://docs.astral.sh/ruff/settings/#mccabe
 max-complexity = 15
 
-[tool.ruff.lint.per-file-ignores]
+[lint.per-file-ignores]
 # https://docs.astral.sh/ruff/settings/#per-file-ignores
 #"conf/mail/mail.py" = ["INP001"]
 
-[tool.ruff.lint.pydocstyle]
+[lint.pydocstyle]
 # https://docs.astral.sh/ruff/settings/#lintpydocstyle
 convention = "pep257"
 
-[tool.ruff.lint.pyflakes]
+[lint.pyflakes]
 # https://docs.astral.sh/ruff/settings/#pyflakes
 extend-generics = ["django.db.models.ForeignKey"]
