@@ -1,0 +1,6 @@
+-   id: detect-fuzzy-translations
+    name: detect fuzzy translations
+    description: detects the presence of fuzzy messages in translation files.
+    entry: detect-fuzzy-translations
+    language: python
+    files: .+\.po$

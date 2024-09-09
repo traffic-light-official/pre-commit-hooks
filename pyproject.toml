@@ -1,0 +1,131 @@
+[project]
+requires-python = ">=3.5"
+
+[tool.ruff]
+# https://docs.astral.sh/ruff/settings/
+builtins = ["_"]
+line-length = 120
+preview = true
+unsafe-fixes = true
+
+[tool.ruff.format]
+# https://docs.astral.sh/ruff/settings/#format
+docstring-code-format = true
+quote-style = "single"
+
+[tool.ruff.lint]
+# https://docs.astral.sh/ruff/settings/
+dummy-variable-rgx = "^(_{2,}|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+ignore-init-module-imports = true
+task-tags = ["FIXME", "HACK", "TODO", "XXX"]
+
+# https://docs.astral.sh/ruff/rules/
+select = [
+    "A",    # flake8-builtins
+#    "AIR",  # Airflow
+    "ANN",  # flake8-annotations
+#    "ARG",  # flake8-unused-arguments
+    "ASYNC",  # flake8-async
+    "B",    # flake8-bugbear
+#    "BLE",  # flake8-blind-except
+    "C4",   # flake8-comprehensions
+    "C90",  # mccabe
+    "COM",  # flake8-commas
+#    "CPY",  # Copyright-related rules
+    "D",    # pydocstyle
+    "DJ",   # flake8-django
+#    "DOC",  # pydoclint  # Пока не поддерживает convention="pep257" (только numpy и google)
+    "DTZ",  # flake8-datetimez
+    "E",    # pycodestyle error
+#    "EM",   # flake8-errmsg
+#    "ERA",  # eradicate
+    "EXE",  # flake8-executable
+    "F",    # pyflakes
+    "FA",  # flake8-future-annotations
+#    "FAST",  # FastAPI
+    "FBT",  # flake8-boolean-trap
+#    "FIX",  # flake8-fixme
+    "FURB", # refurb
+    "FLY",  # flynt
+    "G",    # flake8-logging-format
+    "I",    # isort
+    "ICN",  # flake8-import-conventions
+    "INP",  # flake8-no-pep420
+    "INT",  # flake8-gettext
+    "ISC",  # flake8-implicit-str-concat
+    "LOG",  # flake8_logging
+    "N",    # pep8-naming
+    "NPY",  # NumPy-specific rules
+#    "PD",   # pandas-vet
+    "PERF",  # Perflint
+    "PGH",  # pygrep-hooks
+    "PIE",  # flake8-pie
+    "PL",   # Pylint
+#    "PT",   # flake8-pytest-style
+    "PTH",  # flake8-use-pathlib
+#    "PYI",  # flake8-pyi
+    "Q",    # flake8-quotes
+    "RET",  # flake8-return
+    "RSE",  # flake8-raise
+    "RUF",  # Ruff-specific rules
+    "S",    # flake8-bandit
+    "SIM",  # flake8-simplify
+    "SLF",  # flake8-self
+    "SLOT",  # flake8-slots
+    "T10",  # flake8-debugger
+    "T20",  # flake8-print
+    "TCH",  # flake8-type-checking
+    "TD",  # flake8-todos
+    "TID",  # flake8-tidy-imports
+    "TRY",  # tryceratops
+    "UP",   # pyupgrade
+    "W",    # pycodestyle warning
+    "YTT",  # flake8-2020
+]
+ignore = [
+    "ANN401",
+    "COM812",
+    "E203",
+    "ISC001",   # По настоянию Ruff Formatter
+    "PLR6301",
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    "RUF012",
+    "TD002",
+    "TRY003",
+]
+fixable = ["I", "UP"]
+
+[tool.ruff.lint.flake8-import-conventions]
+banned-from = ["datetime"]
+
+[tool.ruff.lint.flake8-quotes]
+# https://docs.astral.sh/ruff/settings/#flake8-quotes
+inline-quotes = "single"
+
+[tool.ruff.lint.flake8-self]
+# https://docs.astral.sh/ruff/settings/#ignore-names
+ignore-names = ["_asdict", "_fields", "_field_defaults", "_make", "_meta", "_replace"]
+
+[tool.ruff.lint.isort]
+# https://docs.astral.sh/ruff/settings/#isort
+force-sort-within-sections = true
+known-first-party = ["pre_commit_hooks"]
+order-by-type = false
+
+[tool.ruff.lint.mccabe]
+# https://docs.astral.sh/ruff/settings/#mccabe
+max-complexity = 15
+
+[tool.ruff.lint.per-file-ignores]
+# https://docs.astral.sh/ruff/settings/#per-file-ignores
+#"conf/mail/mail.py" = ["INP001"]
+
+[tool.ruff.lint.pydocstyle]
+# https://docs.astral.sh/ruff/settings/#lintpydocstyle
+convention = "pep257"
+
+[tool.ruff.lint.pyflakes]
+# https://docs.astral.sh/ruff/settings/#pyflakes
+extend-generics = ["django.db.models.ForeignKey"]
