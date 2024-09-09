@@ -10,7 +10,7 @@ Add this to your `.pre-commit-config.yaml`
 
 ```yaml
 -   repo: https://github.com/traffic-light-official/pre-commit-hooks
-    rev: v1.0.0  # Use the ref you want to point at
+    rev: v1.1.0  # Use the ref you want to point at
     hooks:
     -   id: detect-fuzzy-translations
         files: /LC_MESSAGES/.+\.po$
